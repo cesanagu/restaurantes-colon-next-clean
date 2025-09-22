@@ -1,0 +1,81 @@
+.hero {
+  height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  margin-bottom: 60px;
+}
+
+.textBlock {
+  max-width: 900px;
+  margin: 0 auto 100px auto;
+  padding: 0 20px;
+}
+
+.textBlock h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.textBlock p {
+  margin-bottom: 60px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Fade-in items */
+.fadeInItem {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlap Images */
+.overlapImagesSection {
+  display: flex;
+  justify-content: center;
+  gap: -60px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.overlapImage {
+  width: 320px;
+  max-width: 90%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+
+.overlapImage:nth-child(1) { z-index: 3; }
+.overlapImage:nth-child(2) { z-index: 2; }
+.overlapImage:nth-child(3) { z-index: 1; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .overlapImagesSection { gap: -40px; }
+  .overlapImage { height: 350px; }
+}
+
+@media (max-width: 768px) {
+  .hero { height: 40vh; }
+  .overlapImagesSection { gap: -30px; }
+  .overlapImage { height: 250px; width: 80%; }
+}
+
+@media (max-width: 480px) {
+  .hero { height: 30vh; font-size: 1.5rem; }
+  .overlapImage { height: 180px; width: 90%; }
+}

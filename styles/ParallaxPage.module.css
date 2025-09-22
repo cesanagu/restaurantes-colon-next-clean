@@ -1,0 +1,72 @@
+.hero {
+  height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  margin-bottom: 40px;
+}
+
+.contentSection {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.paragraph {
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* Overlap images */
+.overlapContainer {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: -60px; /* negative gap para overlap */
+  flex-wrap: wrap;
+}
+
+.overlapImage {
+  width: 300px;
+  max-width: 90%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  z-index: 1;
+}
+
+.overlapImage:nth-child(1) { z-index: 3; }
+.overlapImage:nth-child(2) { z-index: 2; }
+.overlapImage:nth-child(3) { z-index: 1; }
+
+.overlapImage.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .overlapContainer { gap: -40px; }
+  .overlapImage { height: 350px; }
+}
+
+@media (max-width: 768px) {
+  .hero { height: 40vh; }
+  .overlapContainer { gap: -30px; }
+  .overlapImage { height: 250px; width: 80%; }
+}
+
+@media (max-width: 480px) {
+  .hero { height: 30vh; font-size: 1.5rem; }
+  .overlapImage { height: 180px; width: 90%; }
+}
