@@ -1,5 +1,5 @@
-import "@/styles/globals.css";
-import BackButton from "@/components/BackButton";
+import "../styles/globals.css";
+import BackButton from "../components/BackButton";
 
 export default function App({ Component, pageProps }) {
   return (

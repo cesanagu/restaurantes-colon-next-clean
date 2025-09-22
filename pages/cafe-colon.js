@@ -89,6 +89,9 @@ export default function CafeColon() {
           </div>
         </div>
       </section>
+
+<p className="fadeInItem">Prueba de despliegue Vercel</p>
+
     </Layout>
   );
 }
